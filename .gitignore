@@ -42,3 +42,4 @@ build/
 uml-hirecore*.png
 uml-hirecore*.svg
 uml-hirecore*.puml
+!uml-hirecore-simple.png

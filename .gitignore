@@ -37,3 +37,8 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Diagramas UML (pendientes de decisión, no subir aún) ###
+uml-hirecore*.png
+uml-hirecore*.svg
+uml-hirecore*.puml

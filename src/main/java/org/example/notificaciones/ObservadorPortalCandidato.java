@@ -1,6 +1,10 @@
 package org.example.notificaciones;
 
+import java.time.format.DateTimeFormatter;
+
 public class ObservadorPortalCandidato implements ObservadorCandidato {
+
+    private static final DateTimeFormatter FORMATO_FECHA = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
     private final CanalNotificacion canal;
 
@@ -14,6 +18,8 @@ public class ObservadorPortalCandidato implements ObservadorCandidato {
             canal.enviar(
                     evento.getCandidato().getId(),
                     "Tu proceso avanzó a " + evento.getEtapaNueva()
+                            + " (actualizado por " + evento.getUsuario()
+                            + " el " + evento.getFecha().format(FORMATO_FECHA) + ")"
             );
         }
     }

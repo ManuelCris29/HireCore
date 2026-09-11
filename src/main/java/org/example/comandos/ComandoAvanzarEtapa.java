@@ -39,17 +39,17 @@ public class ComandoAvanzarEtapa implements Comando {
         memento = candidato.guardarEstado();
         var etapaAnterior = candidato.getEtapaActual().getTipoEtapa();
         candidato.setEtapaActual(nuevaEtapa);
-        publicador.publicar(new EventoCambioEtapa(candidato, etapaAnterior, nuevaEtapa.getTipoEtapa(), esNotaInterna));
+        publicador.publicar(new EventoCambioEtapa(candidato, etapaAnterior, nuevaEtapa.getTipoEtapa(), usuario, fecha, esNotaInterna));
     }
 
     @Override
-    public void deshacer() {
+    public void deshacer(String usuarioDeshace, LocalDateTime fechaDeshace) {
 
         var etapaAnterior = candidato.getEtapaActual().getTipoEtapa();
         candidato.restaurarEstado(memento);
 
         var nuevaEtapa = candidato.getEtapaActual().getTipoEtapa();
-        publicador.publicar(new EventoCambioEtapa(candidato, etapaAnterior, nuevaEtapa, esNotaInterna));
+        publicador.publicar(new EventoCambioEtapa(candidato, etapaAnterior, nuevaEtapa, usuarioDeshace, fechaDeshace, esNotaInterna));
     }
 
     @Override

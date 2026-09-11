@@ -47,8 +47,8 @@ public class GestorDeCandidato {
     }
 
 
-    public void deshacerUltimaTransicion() {
-        historial.deshacerUltimo();
+    public void deshacerUltimaTransicion(String usuario) {
+        historial.deshacerUltimo(usuario);
     }
 
 }

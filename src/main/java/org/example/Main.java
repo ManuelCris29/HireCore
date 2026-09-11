@@ -49,7 +49,7 @@ public class Main {
         System.out.println();
 
         System.out.println("== Deshaciendo la última transición ==");
-        gestor.deshacerUltimaTransicion();
+        gestor.deshacerUltimaTransicion("supervisor.diana");
         System.out.println("Después de deshacer, está en " + ana.getEtapaActual().getTipoEtapa());
         System.out.println();
 
